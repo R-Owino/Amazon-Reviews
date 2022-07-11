@@ -28,7 +28,7 @@ import torch
 from sklearn.model_selection import train_test_split
 
 # instantiating spacy's pretrained model
-nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.load("en_core_web_sm")
 
 # main function
 def main():
@@ -115,31 +115,31 @@ def main():
           st.write(final_df)
         analyzer(user_input)
 
-        def ABSA(text):
+#         def ABSA(text):
           
-          aspects = []
-          i = 0
-          for i, sentence in enumerate(text):
-            doc = nlp(sentence)
-            descriptive_term = ''
-            target = ''
-            for token in doc:
-              # Obtaining nouns
-              if (token.pos_ == 'NOUN'):
-                target = token.text
-                # Obtaining adjectives
-              if token.pos_ == 'ADJ':
-                prepend = ''
-                for child in token.children:
-                  # Obtaning adverbs
-                  if child.pos_ != 'ADV':
-                    continue
-                  prepend += child.text + ' '
-                descriptive_term = prepend + token.text
-            aspects.append({'aspect': target})
+#           aspects = []
+#           i = 0
+#           for i, sentence in enumerate(text):
+#             doc = nlp(sentence)
+#             descriptive_term = ''
+#             target = ''
+#             for token in doc:
+#               # Obtaining nouns
+#               if (token.pos_ == 'NOUN'):
+#                 target = token.text
+#                 # Obtaining adjectives
+#               if token.pos_ == 'ADJ':
+#                 prepend = ''
+#                 for child in token.children:
+#                   # Obtaning adverbs
+#                   if child.pos_ != 'ADV':
+#                     continue
+#                   prepend += child.text + ' '
+#                 descriptive_term = prepend + token.text
+#             aspects.append({'aspect': target})
             
-          return aspects
-        ABSA(user_input)
+#           return aspects
+#         ABSA(user_input)
 
     #final_df['Aspect'] = ABSA(final_df['Aspect'])   
 
