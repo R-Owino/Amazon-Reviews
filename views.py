@@ -27,11 +27,6 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 from sklearn.model_selection import train_test_split
 
-# # importing the functions file 
-# import func.py
-
-# instantiating spacy's pretrained model
-nlp = spacy.load("en_core_web_sm")
 
 
 # main function
